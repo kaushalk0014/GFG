@@ -43,26 +43,22 @@ class Compute
 {
     public long[] minAnd2ndMin(long a[], long n)  
     {
-        long[] ans = new long[2];
-		long smallest = Integer.MAX_VALUE;
-		long secSmallest = Integer.MAX_VALUE;
-		for (int i = 0; i < n; i++) {
-				if(a[i]<smallest) {
-					secSmallest=smallest;
-					smallest=a[i];
-				}else if(a[i]<secSmallest&&a[i]!=smallest) {
-					secSmallest=a[i];
-				} 
-		}
-		if (secSmallest == Integer.MAX_VALUE) {
-		   long[] ans1 = new long[1];
-		   ans1[0]=-1;
-		   return ans1;
-		}else{
-		    ans[0]=smallest;
-		    ans[1]=secSmallest;
-		}
-	
-		return ans;
+        long sm=Long.MAX_VALUE;
+        long secSm=Long.MAX_VALUE;
+        for(int i=0;i<n;i++){
+            if(a[i]<sm){
+                secSm=sm;
+                sm=a[i];
+            }else if(a[i]<secSm&&sm!=a[i]){
+                secSm=a[i];
+            }
+        }
+        
+        long result[]={sm,secSm};
+        if(secSm==Long.MAX_VALUE){
+            result[0]=-1l;
+            result[1]=-1l;
+        }
+        return result;
     }
 }
