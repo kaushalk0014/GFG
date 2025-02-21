@@ -29,13 +29,13 @@ class Solution {
     public int binaryToDecimal(String b) {
        char ch[] = b.toCharArray();
        
-       int count=1;
+       int power=1;
        int sum=0;
        for(int i= ch.length-1; i>=0; i--){
            if(ch[i]=='1'){
-               sum= sum+count;
+               sum= sum+power;
            }
-           count=count*2;
+           power=power*2;
        }
        return sum;
     }
