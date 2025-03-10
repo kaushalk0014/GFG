@@ -35,7 +35,6 @@ public class GFG {
 
 class Solution {
     public int binarysearch(int[] arr, int k) {
-        
         int low =0;
         int high=arr.length-1;
         int result =-1;
@@ -43,12 +42,10 @@ class Solution {
             return -1;
         }
         while(low<=high){
-            int mid =(low+high)/2;
-            
+            int mid = low + (high - low) / 2;
             if(k== arr[mid]){
                 high= mid -1;
                 result= mid;
-                
             }else if(arr[mid]> k){
                 high= mid-1;
             }else{
